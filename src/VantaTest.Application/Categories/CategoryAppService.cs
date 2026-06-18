@@ -48,6 +48,7 @@ namespace VantaTest.Categories
         {
             var queryable = await _repository.GetQueryableAsync();
             var query = queryable
+                .Where(c => c.ParentId != null)
                 .OrderBy(input.Sorting.IsNullOrWhiteSpace() ? "Name" : input.Sorting)
                 .Skip(input.SkipCount)
                 .Take(input.MaxResultCount);
@@ -68,6 +69,18 @@ namespace VantaTest.Categories
             ObjectMapper.Map(input, category);
             await _repository.UpdateAsync(category);
             return ObjectMapper.Map<Category, CategoryDto>(category);
+        }
+        public async Task<PagedResultDto<CategoryDto>> GetAllParent()
+        {
+            var queryable = await _repository.GetQueryableAsync();
+            var query = queryable.Where(c => c.ParentId == null);
+            var categories = await AsyncExecuter.ToListAsync(query);
+            var totalCount = await AsyncExecuter.CountAsync(queryable);
+
+            return new PagedResultDto<CategoryDto>(
+                totalCount,
+                ObjectMapper.Map<List<Category>, List<CategoryDto>>(categories)
+            );
         }
     }
 }

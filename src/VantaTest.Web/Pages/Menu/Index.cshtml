@@ -12,104 +12,24 @@
 
         <div class="aciklama">Kategori seçimi yaparak devam edebilirsiniz...</div>
 
-        @*  @foreach (var typeGroup in Model.Foods.GroupBy(f => f.Category.Type))
+       
+        @foreach (var typeGroup in Model.ParentCategories)
         {
-
-<button class="accordion">
-                <i class="fa fa-utensils me-2"></i><span>@typeGroup.Key</span>
-            </button>
-            <div class="panel">
-                @foreach (var food in typeGroup)
-                {
-                    <a href="/Menu/Food/@food.Id" class="anaMenuler">@food.Name</a>
-                }
-            </div>
-        } *@
-        @*  @foreach (var Category in Model.Categories)
-        {
-
-<button class="accordion">
-                <i class="fa fa-utensils me-2"></i><span>@Category.Type</span>
-            </button>
-            <div class="panel">
-                @foreach (var food in typeGroup)
-                {
-                    <a href="/Menu/Food/@food.Id" class="anaMenuler">@food.Name</a>
-                }
-            </div>
-        } *@
-       @*  @foreach (var typeGroup in Model.Categories)
-        {
-            switch (typeGroup.Type)
-            {
-                case typeGroup.Type.Food:
-                    <button class="accordion">
-                        <i class="fa fa-utensils me-2"></i><span>@typeGroup.Type</span>
-                    </button>
-                    break;
-                case MenuType.AlcoholicDrink:
-                    <button class="accordion">
-                        <i class="fa fa-glass-martini-alt me-2"></i><span>@typeGroup.Type</span>
-                    </button>
-                    break;
-                case MenuType.NonAlcoholicDrink:
-                    <button class="accordion">
-                        <i class="fa fa-coffee me-2"></i><span>@typeGroup.Type</span>
-                    </button>
-                    break;
-                default:
-                    <button class="accordion">
-                        <i class="fa fa-utensils me-2"></i><span>@typeGroup.Type</span>
-                    </button>
-                    break;
-            }
             <button class="accordion">
-                <i class="fa fa-utensils me-2"></i><span>@typeGroup.Key</span>
+                <i class="fa fa-utensils me-2"></i><span>@typeGroup.Name</span>
             </button>
 
             <div class="panel">
-
-                @foreach (var categoryGroup in typeGroup.GroupBy(f => f.Cate.Id))
+                @foreach (var food in Model.Categories)
                 {
-                    // Grubun içinden ilk yemeğin kategori bilgisini almamız yeterli
-                    var category = categoryGroup.First().Category;
+                    if (typeGroup.Id == food.ParentId)
+                    {
 
-                    <a href="/Menu?categoryId=@category.Id" class="anaMenuler">@category.Name</a>
+                        <a href="/Menu/Food/@food.Id" class="anaMenuler">@food.Name</a>
+                    }
                 }
-
             </div>
-        } *@
-        <!-- 1. Akordeon: Yiyecekler -->
-        @*
-        <div class="panel">
-            <a href="#" class="anaMenuler">Soğuk Mezeler</a>
-            <a href="#" class="anaMenuler">Sıcak Başlangıç</a>
-            <a href="#" class="anaMenuler">Salatalar</a>
-            <a href="#" class="anaMenuler">Vejetaryen</a>
-            <a href="#" class="anaMenuler">Taş Fırından</a>
-            <a href="#" class="anaMenuler">Tatlılar</a>
-        </div>
-
-        <!-- 2. Akordeon: Alkollü İçecekler -->
-        <button class="accordion">
-            <i class="fa fa-glass-martini-alt me-2"></i><span>İÇECEKLER (ALKOLLÜ)</span>
-        </button>
-        <div class="panel">
-            <a href="#" class="anaMenuler">Kokteyl</a>
-            <a href="#" class="anaMenuler">Bira</a>
-            <a href="#" class="anaMenuler">Viski</a>
-            <a href="#" class="anaMenuler">Şarap</a>
-        </div>
-
-        <!-- 3. Akordeon: Alkolsüz İçecekler -->
-        <button class="accordion">
-            <i class="fa fa-coffee me-2"></i><span>İÇECEKLER</span>
-        </button>
-        <div class="panel">
-            <a href="#" class="anaMenuler">Soğuk İçecek</a>
-            <a href="#" class="anaMenuler">İmza İçecekler</a>
-            <a href="#" class="anaMenuler">Sıcak İçecekler</a>
-        </div> *@
+        }
 
     </div>
 </div>

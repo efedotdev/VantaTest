@@ -68,6 +68,6 @@ namespace VantaTest.Foods
             ObjectMapper.Map(input, food);
             await _repository.UpdateAsync(food);
             return ObjectMapper.Map<Food, FoodDto>(food);
-        }
+        }       
     }
 }

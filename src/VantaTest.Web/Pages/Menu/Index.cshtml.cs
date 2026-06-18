@@ -12,26 +12,24 @@ namespace VantaTest.Web.Pages.Menu
 {
     public class IndexModel : VantaTestPageModel
     {
-
         [BindProperty]
-        public IReadOnlyList<FoodDto> Foods { get; set; }
+        public IReadOnlyList<CategoryDto> ParentCategories { get; set; }
+
         [BindProperty]
 
         public IReadOnlyList<CategoryDto> Categories { get; set; }
 
-        private readonly IFoodAppService _foodAppService;
         private readonly ICategoryAppService _categoryAppService;
-        public IndexModel(IFoodAppService foodAppService, ICategoryAppService categoryAppService)
+        public IndexModel( ICategoryAppService categoryAppService)
         {
-            _foodAppService = foodAppService;
             _categoryAppService = categoryAppService;
         }
         public async Task OnGetAsync()
         {
-            var resultFood = await _foodAppService.GetListAsync(new PagedAndSortedResultRequestDto());
+            var resultParentCategory = await _categoryAppService.GetAllParent();
             var resultCategory = await _categoryAppService.GetListAsync(new PagedAndSortedResultRequestDto());
 
-            Foods = resultFood.Items;
+            ParentCategories = resultParentCategory.Items;
             Categories = resultCategory.Items;
         }
     }

@@ -31,8 +31,8 @@ namespace VantaTest
                     new Category
                     {
                        
-                        Name = "Yiyecekler",
-                        ParentId  =null
+                        Name = "Burgerler",
+                        ParentId  = Guid.Parse("1f06ac7b-6aa5-1d20-0142-3a21ed219820")
 
                     },
                     autoSave: true
@@ -42,8 +42,8 @@ namespace VantaTest
                     new Category
                     {
                         
-                        Name = "Alkollü İçecekler",
-                        ParentId = null
+                        Name = "Şaraplar",
+                        ParentId = Guid.Parse("b988b242-753d-f186-7be1-3a21ed2198f1")
 
                     },
                     autoSave: true
@@ -52,8 +52,8 @@ namespace VantaTest
                     new Category
                     {
                         
-                        Name = "Alkollsüz İçecekler",
-                        ParentId = null
+                        Name = "Gazlı İçecekler",
+                        ParentId = Guid.Parse("5d9e4a6e-f338-4f33-6523-3a21ed2198f3")
 
                     },
                     autoSave: true
