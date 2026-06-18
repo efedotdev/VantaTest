@@ -1,0 +1,13 @@
+<Solution>
+    <Folder Name="/src/">
+        <Project Path="src/VantaTest.Domain/VantaTest.Domain.csproj" />
+        <Project Path="src/VantaTest.Application/VantaTest.Application.csproj" />
+        <Project Path="src/VantaTest.EntityFrameworkCore/VantaTest.EntityFrameworkCore.csproj" />
+        <Project Path="src/VantaTest.Web/VantaTest.Web.csproj" />
+        <Project Path="src/VantaTest.Domain.Shared/VantaTest.Domain.Shared.csproj" />
+        <Project Path="src/VantaTest.Application.Contracts/VantaTest.Application.Contracts.csproj" />
+        <Project Path="src/VantaTest.HttpApi/VantaTest.HttpApi.csproj" />
+        <Project Path="src/VantaTest.HttpApi.Client/VantaTest.HttpApi.Client.csproj" />
+        <Project Path="src/VantaTest.DbMigrator/VantaTest.DbMigrator.csproj" />
+    </Folder>
+</Solution>
