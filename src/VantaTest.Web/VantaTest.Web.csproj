@@ -39,6 +39,182 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\abp-blog-white.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\abp-blog.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\abp-community-white.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\abp-community.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\abp-studio-white.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\abp-studio.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\abp-suite-white.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\abp-suite.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\abp-support-white.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\abp-support.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\angular-dark.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\angular.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\bg-01.png" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\blazor-dark.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\blazor.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\book.png" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\discord.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\entity-famework-core-dark.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\entity-famework-core.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\food-burger1.jpg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\food-burger2.jpg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\food-pizza2.jpg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\img-blog.png" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\img-community.png" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\img-support.png" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\instagram.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\mongo-db-dark.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\mongo-db.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\mvc-razor-pages-dark.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\mvc-razor-pages.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\stack-overflow.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\x-white.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\x.svg" />
+    <None Remove="Pages\Dashboard\Categories\images\getting-started\youtube.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\abp-blog-white.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\abp-blog.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\abp-community-white.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\abp-community.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\abp-studio-white.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\abp-studio.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\abp-suite-white.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\abp-suite.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\abp-support-white.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\abp-support.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\angular-dark.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\angular.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\bg-01.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\blazor-dark.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\blazor.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\book.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\discord.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\entity-famework-core-dark.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\entity-famework-core.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\food-burger1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\food-burger2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\food-pizza2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\img-blog.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\img-community.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\img-support.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\instagram.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\mongo-db-dark.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\mongo-db.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\mvc-razor-pages-dark.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\mvc-razor-pages.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\stack-overflow.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\x-white.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\x.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Pages\Dashboard\Categories\images\getting-started\youtube.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AspNetCore.HealthChecks.UI" Version="9.0.0" />
     <PackageReference Include="KubernetesClient" Version="18.0.5" />
     <PackageReference Include="IdentityModel" Version="7.0.0" />
@@ -79,7 +255,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Dashboard\Categories\" />
+    <Folder Include="Pages\Dashboard\Categories\Edit\" />
+    <Folder Include="Pages\Dashboard\Categories\images\foods\" />
     <Folder Include="Pages\Dashboard\Foods\Edit\" />
     <Folder Include="wwwroot\images\foods\" />
   </ItemGroup>
