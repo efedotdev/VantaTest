@@ -71,9 +71,24 @@ public class VantaTestMenuContributor : IMenuContributor
             new ApplicationMenuItem(
                 "dashboard",
                 "Dashboard",
-                url: "/Dashboard",
                 icon: "fas fa-hammer",
                 order: 3
+
+            ).AddItem(
+            new ApplicationMenuItem(
+                "dashboard.categories",
+                "Categories",
+                icon: "fas fa-list",
+                url: "/Dashboard/Categories"
+                )
+
+            ).AddItem(
+            new ApplicationMenuItem(
+                "dashboard.foods",
+                "Foods",
+                icon: "fas fa-utensils",
+                url: "/Dashboard/Foods"
+                )
 
             )
         );

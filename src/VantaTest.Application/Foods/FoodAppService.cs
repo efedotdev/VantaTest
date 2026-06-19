@@ -26,8 +26,10 @@ namespace VantaTest.Foods
         public async Task<FoodDto> CreateAsync(CreateUpdateFoodDto input)
         {
             var food = ObjectMapper.Map<CreateUpdateFoodDto, Food>(input);
-            await _repository.InsertAsync(food);
-            return ObjectMapper.Map<Food, FoodDto>(food);
+            await _repository.InsertAsync(food,autoSave:true);
+            var queryable = await _repository.WithDetailsAsync(x => x.Category);
+            var foodWithCategory = await queryable.FirstOrDefaultAsync(x => x.Id == food.Id);
+            return ObjectMapper.Map<Food, FoodDto>(foodWithCategory);
         }
 
        //[Authorize(VantaTestPermissions.Foods.Delete)]
@@ -40,7 +42,9 @@ namespace VantaTest.Foods
         public async Task<FoodDto> GetAsync(Guid id)
         {
             var food = await _repository.GetAsync(id);
-            return ObjectMapper.Map<Food, FoodDto>(food);
+            var queryable = await _repository.WithDetailsAsync(x => x.Category);
+            var foodWithCategory = await queryable.FirstOrDefaultAsync(x => x.Id == food.Id);
+            return ObjectMapper.Map<Food, FoodDto>(foodWithCategory);
         }
 
         public async Task<PagedResultDto<FoodDto>> GetListAsync(PagedAndSortedResultRequestDto input)
@@ -64,10 +68,13 @@ namespace VantaTest.Foods
         //[Authorize(VantaTestPermissions.Foods.Edit)]
         public async Task<FoodDto> UpdateAsync(Guid id, CreateUpdateFoodDto input)
         {
+
             var food = await _repository.GetAsync(id);
             ObjectMapper.Map(input, food);
             await _repository.UpdateAsync(food);
-            return ObjectMapper.Map<Food, FoodDto>(food);
+            var queryable = await _repository.WithDetailsAsync(x => x.Category);
+            var foodWithCategory = await queryable.FirstOrDefaultAsync(x => x.Id == food.Id);
+            return ObjectMapper.Map<Food, FoodDto>(foodWithCategory);
         }       
     }
 }

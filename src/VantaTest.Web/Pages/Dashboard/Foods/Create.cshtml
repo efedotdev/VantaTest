@@ -1,0 +1,73 @@
+﻿@page
+@model VantaTest.Web.Pages.Dashboard.Foods.CreateModel
+@{
+}
+@section styles {
+  <abp-style src="/Pages/Dashboard/Foods/Create/create.css" />
+}
+@section scripts {
+   <abp-script src="/Pages/Dashboard/Foods/Create/create.js" />
+}
+<div class="container p-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white fw-bold">
+                    <i class="bi bi-plus-circle me-2"></i>Yeni Yemek Ekle
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+
+                        <div class="mb-4">
+                            <label for="productImageInput" class="form-label fw-bold">Ürün Görseli</label>
+
+                            <div class="image-upload-container" id="uploadContainer" onclick="document.getElementById('productImageInput').click()">
+
+                                <div id="uploadPlaceholder">
+                                    <i class="bi bi-cloud-arrow-up fs-1 text-muted"></i>
+                                    <p class="text-muted mb-0 mt-2">Fotoğraf yüklemek için tıklayın</p>
+                                </div>
+
+                                <img id="imagePreviewBox" class="image-preview" alt="Önizleme" style="display: none;">
+                            </div>
+
+                            <input type="file" name="UploadedImage" class="form-control d-none" id="productImageInput" accept="image/*">
+                        </div>
+                        <div class="mb-3">
+                            <label for="categorySelect" class="form-label fw-bold">Kategori</label>
+                            <select class="form-select" id="categorySelect" asp-for="Food.CategoryId" required>
+                                <option value="" selected disabled>Kategori Seçiniz...</option>
+                                @foreach (var category in Model.Categories)
+                                {
+                                    <option value="@category.Id">@category.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Food.Name" class="form-label fw-bold">Yemek Adı</label>
+                            <input type="text" asp-for="Food.Name" class="form-control" placeholder="Örn: Adana Kebap" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Food.Price" class="form-label fw-bold">Fiyat</label>
+                            <div class="input-group">
+                                <span class="input-group-text">₺</span>
+                                <input type="number" asp-for="Food.Price" class="form-control" placeholder="0.00" step="0.01" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Food.Description" class="form-label fw-bold">Açıklama</label>
+                            <textarea asp-for="Food.Description" class="form-control" rows="3" placeholder="Yemek hakkında kısa bilgi..." required></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a asp-page="./Index" class="btn btn-secondary">İptal</a>
+                            <button type="submit" class="btn btn-primary">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
