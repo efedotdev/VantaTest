@@ -67,6 +67,16 @@ public class VantaTestMenuContributor : IMenuContributor
 
             )
         );
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                "dashboard",
+                "Dashboard",
+                url: "/Dashboard",
+                icon: "fas fa-hammer",
+                order: 3
+
+            )
+        );
 
         return Task.CompletedTask;
     }

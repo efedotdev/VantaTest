@@ -33,6 +33,29 @@
         transform: scale(1.05);
     }
 
+.full-width-breakout {
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+}
+
+    .full-width-breakout .carousel-item img {
+        object-fit: cover;
+        max-height: 70vh;
+    }
+
+
+/*FEATURETTES*/
+
+.custom-width-container {
+    width: 80% !important;
+    max-width: 100% !important;
+}
+
+
 /*Footer Styles*/
 
 .main-content {
@@ -53,6 +76,12 @@ body {
     webkit-box-shadow: 0 8px 48px 8px rgba(47, 91, 234, 0.175);
     box-shadow: 0 8px 48px 8px rgba(47, 91, 234, 0.175);
     padding: 60px;
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
 }
 
     .footer_area .row {
