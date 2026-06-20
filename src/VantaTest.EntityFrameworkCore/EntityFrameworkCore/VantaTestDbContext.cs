@@ -16,6 +16,7 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using VantaTest.Foods;
 using VantaTest.Categories;
+using VantaTest.Headers;
 
 namespace VantaTest.EntityFrameworkCore;
 
@@ -31,6 +32,7 @@ public class VantaTestDbContext :
     public DbSet<Food> Foods { get; set; }
 
     public DbSet<Category> Categories { get; set; }
+    public DbSet<Header> Headers { get; set; }
 
     #region Entities from the modules
 
@@ -100,6 +102,12 @@ public class VantaTestDbContext :
         builder.Entity<Category>(b =>
         {
             b.ToTable(VantaTestConsts.DbTablePrefix + "Categories", VantaTestConsts.DbSchema);
+            b.ConfigureByConvention();
+            
+        });
+        builder.Entity<Header>(b =>
+        {
+            b.ToTable(VantaTestConsts.DbTablePrefix + "Headers", VantaTestConsts.DbSchema);
             b.ConfigureByConvention();
             
         });

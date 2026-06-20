@@ -90,6 +90,14 @@ public class VantaTestMenuContributor : IMenuContributor
                 url: "/Dashboard/Foods"
                 )
 
+            ).AddItem(
+            new ApplicationMenuItem(
+                "dashboard.customization",
+                "Customization",
+                icon: "fas fa-cogs",
+                url: "/Dashboard/Customization"
+                )
+
             )
         );
 

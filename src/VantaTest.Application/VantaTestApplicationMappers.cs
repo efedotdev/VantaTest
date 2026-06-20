@@ -1,6 +1,7 @@
 using Riok.Mapperly.Abstractions;
 using VantaTest.Categories;
 using VantaTest.Foods;
+using VantaTest.Headers;
 using Volo.Abp.Mapperly;
 
 namespace VantaTest;
@@ -29,4 +30,16 @@ public partial class VantaCreateUpdateCategoryDtoToCategoryMappers : MapperBase<
 {
     public override partial Category Map(CreateUpdateCategoryDto source);
     public override partial void Map(CreateUpdateCategoryDto source, Category destination);
+}
+[Mapper(RequiredMappingStrategy = RequiredMappingStrategy.Target)]
+public partial class VantaTestHeaderToHeaderDtoMappers : MapperBase<Header, HeaderDto>
+{
+    public override partial HeaderDto Map(Header source);
+    public override partial void Map(Header source, HeaderDto destination);
+}
+[Mapper(RequiredMappingStrategy = RequiredMappingStrategy.Target)]
+public partial class VantaCreateUpdateHeaderDtoToHeaderMappers : MapperBase<CreateUpdateHeaderDto, Header>
+{
+    public override partial Header Map(CreateUpdateHeaderDto source);
+    public override partial void Map(CreateUpdateHeaderDto source, Header destination);
 }

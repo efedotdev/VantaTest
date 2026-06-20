@@ -257,6 +257,7 @@
   <ItemGroup>
     <Folder Include="Pages\Dashboard\Categories\Edit\" />
     <Folder Include="Pages\Dashboard\Categories\images\foods\" />
+    <Folder Include="Pages\Dashboard\Customization\Edit\" />
     <Folder Include="Pages\Dashboard\Foods\Edit\" />
     <Folder Include="wwwroot\images\foods\" />
   </ItemGroup>
