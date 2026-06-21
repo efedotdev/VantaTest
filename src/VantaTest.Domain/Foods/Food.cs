@@ -13,7 +13,7 @@ namespace VantaTest.Foods
         public Guid CategoryId { get; set; }
         public virtual Category Category { get; set; }
         public decimal Price { get; set; }
-        public string ImagePath { get; set; }
+        public string? ImagePath { get; set; }
 
     }
 }

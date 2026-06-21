@@ -10,7 +10,23 @@
                     <i class="bi bi-pencil-square me-2"></i>Yemek Düzenle
                 </div>
                 <div class="card-body">
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
+
+                        <div class="mb-4">
+                            <label for="productImageInput" class="form-label fw-bold">Ürün Görseli</label>
+
+                            <div class="image-upload-container" id="uploadContainer" onclick="document.getElementById('productImageInput').click()">
+
+                                <div id="uploadPlaceholder">
+                                    <i class="bi bi-cloud-arrow-up fs-1 text-muted"></i>
+                                    <p class="text-muted mb-0 mt-2">Fotoğraf yüklemek için tıklayın</p>
+                                </div>
+
+                                <img id="imagePreviewBox" class="image-preview" alt="Önizleme" style="display: none;">
+                            </div>
+
+                            <input type="file" name="UploadedImage" class="form-control d-none" id="productImageInput" accept="image/*">
+                        </div>
                         <div class="mb-3">
                             <label for="categorySelect" class="form-label fw-bold">Kategori</label>
                             <select class="form-select" id="categorySelect" asp-for="Food.CategoryId" required>

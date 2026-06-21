@@ -8,6 +8,8 @@ using System.IO;
 using System.Threading.Tasks;
 using VantaTest.Categories;
 using VantaTest.Foods;
+using VantaTest.Headers;
+using VantaTest.Managers;
 using Volo.Abp.Application.Dtos;
 
 namespace VantaTest.Web.Pages.Dashboard.Customization
@@ -15,27 +17,25 @@ namespace VantaTest.Web.Pages.Dashboard.Customization
     public class CreateModel : PageModel
     {
         [BindProperty]
-        public CreateUpdateFoodDto Food { get; set; }
+        public CreateUpdateHeaderDto Header { get; set; }
         [BindProperty]
         public IFormFile UploadedImage { get; set; }
-                
-        public IReadOnlyList<CategoryDto> Categories { get; set; }
 
-        protected readonly IFoodAppService _foodAppService;
-        protected readonly ICategoryAppService _categoryAppService;
-        private readonly IWebHostEnvironment _env;
+        public IReadOnlyList<HeaderDto> Headers { get; set; }
 
-        public CreateModel(IFoodAppService foodAppService, ICategoryAppService categoryAppService, IWebHostEnvironment env)
+        protected readonly IHeaderAppService _headerAppService;
+        protected readonly IFileManager _FileManager;
+
+        public CreateModel(IHeaderAppService headerAppService, IFileManager fileManager)
         {
-            _foodAppService = foodAppService;
-            _categoryAppService = categoryAppService;
-            _env = env;
+            _headerAppService = headerAppService;
+            _FileManager = fileManager;
         }
 
         public async Task OnGetAsync()
         {
-            var resultCategory = await _categoryAppService.GetListAsync(new PagedAndSortedResultRequestDto());
-            Categories = resultCategory.Items;
+            var resultHeaders = await _headerAppService.GetListAsync(new PagedAndSortedResultRequestDto());
+            Headers = resultHeaders.Items;
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -45,20 +45,9 @@ namespace VantaTest.Web.Pages.Dashboard.Customization
                 await OnGetAsync();
                 return Page();
             }
-
-            if (UploadedImage != null && UploadedImage.Length > 0)
-            {
-                var extension = Path.GetExtension(UploadedImage.FileName);
-                var newFileName = Guid.NewGuid().ToString() + extension;
-                var folderPath = Path.Combine(_env.WebRootPath, "images", "foods");
-                var exactFilePath = Path.Combine(folderPath, newFileName);
-                using (var stream = new FileStream(exactFilePath, FileMode.Create))
-                {
-                    await UploadedImage.CopyToAsync(stream);
-                }
-                Food.ImagePath = "/images/foods/" + newFileName;
-            }
-            await _foodAppService.CreateAsync(Food);
+            var newPath = _FileManager.CreateImagePath(UploadedImage, "headers");
+            Header.ImagePath = newPath.Result;
+            await _headerAppService.CreateAsync(Header);
             return RedirectToPage("./Index");
         }
     }

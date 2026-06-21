@@ -14,7 +14,6 @@ namespace VantaTest.Headers
         [Required]
         [StringLength(512)]
         public string Description { get; set; }
-        [Required]
-        public string ImagePath { get; set; }
+        public string ImagePath { get; set; } = string.Empty;
     }
 }

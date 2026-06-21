@@ -1,5 +1,5 @@
 ﻿// Fotoğraf yükleme alanı 
-document.getElementById('productImageInput').addEventListener('change', function (event) {
+document.getElementById('headerImageInput').addEventListener('change', function (event) {
     const input = event.target;
     const previewBox = document.getElementById('imagePreviewBox');
     const placeholder = document.getElementById('uploadPlaceholder');

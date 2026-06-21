@@ -43,7 +43,7 @@ namespace VantaTest.Headers
         {
             var queryable = await _repository.GetQueryableAsync();
             var query = queryable
-                .OrderBy(input.Sorting.IsNullOrWhiteSpace() ? "Name" : input.Sorting)
+                .OrderBy(input.Sorting.IsNullOrWhiteSpace() ? "MainHeader" : input.Sorting)
                 .Skip(input.SkipCount)
                 .Take(input.MaxResultCount);
 

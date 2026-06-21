@@ -21,6 +21,6 @@ namespace VantaTest.Foods
         public string Description { get; set; } = string.Empty;
         [Required]
         public decimal Price { get; set; }
-        public string ImagePath { get; set; } = string.Empty;
+        public string? ImagePath { get; set; }
     }
 }
