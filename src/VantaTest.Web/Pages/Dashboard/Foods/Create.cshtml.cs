@@ -8,6 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using VantaTest.Categories;
 using VantaTest.Foods;
+using VantaTest.Managers;
 using Volo.Abp.Application.Dtos;
 
 namespace VantaTest.Web.Pages.Dashboard.Foods
@@ -23,13 +24,13 @@ namespace VantaTest.Web.Pages.Dashboard.Foods
 
         protected readonly IFoodAppService _foodAppService;
         protected readonly ICategoryAppService _categoryAppService;
-        private readonly IWebHostEnvironment _env;
+        protected readonly IFileManager _fileManager;
 
-        public CreateModel(IFoodAppService foodAppService, ICategoryAppService categoryAppService, IWebHostEnvironment env)
+        public CreateModel(IFoodAppService foodAppService, ICategoryAppService categoryAppService, IFileManager fileManager)
         {
             _foodAppService = foodAppService;
             _categoryAppService = categoryAppService;
-            _env = env;
+            _fileManager = fileManager;
         }
 
         public async Task OnGetAsync()
@@ -46,18 +47,8 @@ namespace VantaTest.Web.Pages.Dashboard.Foods
                 return Page();
             }
 
-            if (UploadedImage != null && UploadedImage.Length > 0)
-            {
-                var extension = Path.GetExtension(UploadedImage.FileName);
-                var newFileName = Guid.NewGuid().ToString() + extension;
-                var folderPath = Path.Combine(_env.WebRootPath, "images", "foods");
-                var exactFilePath = Path.Combine(folderPath, newFileName);
-                using (var stream = new FileStream(exactFilePath, FileMode.Create))
-                {
-                    await UploadedImage.CopyToAsync(stream);
-                }
-                Food.ImagePath = "/images/foods/" + newFileName;
-            }
+            var newPath = await _fileManager.CreateImagePath(UploadedImage, "foods");
+            Food.ImagePath = newPath;
             await _foodAppService.CreateAsync(Food);
             return RedirectToPage("./Index");
         }

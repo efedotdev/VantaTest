@@ -45,8 +45,8 @@ namespace VantaTest.Web.Pages.Dashboard.Customization
                 await OnGetAsync();
                 return Page();
             }
-            var newPath = _FileManager.CreateImagePath(UploadedImage, "headers");
-            Header.ImagePath = newPath.Result;
+            var newPath = await _FileManager.CreateImagePath(UploadedImage, "headers");
+            Header.ImagePath = newPath;
             await _headerAppService.CreateAsync(Header);
             return RedirectToPage("./Index");
         }

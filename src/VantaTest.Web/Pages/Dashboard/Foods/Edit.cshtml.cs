@@ -8,6 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using VantaTest.Categories;
 using VantaTest.Foods;
+using VantaTest.Managers;
 using Volo.Abp.Application.Dtos;
 
 namespace VantaTest.Web.Pages.Dashboard.Foods
@@ -19,17 +20,17 @@ namespace VantaTest.Web.Pages.Dashboard.Foods
 
         public IReadOnlyList<CategoryDto> Categories { get; set; }
         [BindProperty]
-        public IFormFile UploadedImage { get; set; }
+        public IFormFile? UploadedImage { get; set; }
 
         protected readonly IFoodAppService _foodAppService;
         protected readonly ICategoryAppService _categoryAppService;
-        private readonly IWebHostEnvironment _env;
+        protected readonly IFileManager _fileManager;
 
-        public EditModel(IFoodAppService foodAppService, ICategoryAppService categoryAppService, IWebHostEnvironment env)
+        public EditModel(IFoodAppService foodAppService, ICategoryAppService categoryAppService,IFileManager fileManager)
         {
             _foodAppService = foodAppService;
             _categoryAppService = categoryAppService;
-            _env = env;
+            _fileManager = fileManager;
         }
         public async Task<IActionResult> OnGetAsync(Guid id)
         {
@@ -61,15 +62,8 @@ namespace VantaTest.Web.Pages.Dashboard.Foods
             }
             if (UploadedImage != null && UploadedImage.Length > 0)
             {
-                var extension = Path.GetExtension(UploadedImage.FileName);
-                var newFileName = Guid.NewGuid().ToString() + extension;
-                var folderPath = Path.Combine(_env.WebRootPath, "images", "foods");
-                var exactFilePath = Path.Combine(folderPath, newFileName);
-                using (var stream = new FileStream(exactFilePath, FileMode.Create))
-                {
-                    await UploadedImage.CopyToAsync(stream);
-                }
-                Food.ImagePath = "/images/foods/" + newFileName;
+               var newPath = await _fileManager.UpdateImagePath(UploadedImage,Food.ImagePath);
+                Food.ImagePath = newPath;
             }
             await _foodAppService.UpdateAsync(id, Food);
             return RedirectToPage("./Index");

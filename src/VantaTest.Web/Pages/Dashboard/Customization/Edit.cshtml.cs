@@ -62,8 +62,8 @@ namespace VantaTest.Web.Pages.Dashboard.Customization
             }
             if (UploadedImage != null && UploadedImage.Length > 0)
             {  
-                var newPath = _fileManager.UpdateImagePath(UploadedImage, Header.ImagePath);
-                Header.ImagePath = newPath.Result;
+                var newPath = await _fileManager.UpdateImagePath(UploadedImage, Header.ImagePath);
+                Header.ImagePath = newPath;
             }
             await _headerAppService.UpdateAsync(id, Header);
             return RedirectToPage("./Index");
