@@ -2,16 +2,6 @@
 @model VantaTest.Web.Pages.Menu.IndexModel
 @section styles {
     <abp-style src="/Pages/Menu/Index.css" />
-    <style>
-        #main-navbar, header, .main-header {
-            display: none !important;
-        }
-
-        body, .main-content, .lpx-content-container {
-            padding-top: 0 !important;
-            margin-top: 0 !important;
-        }
-    </style>
 }
 @section scripts {
     <abp-script src="/Pages/Menu/Index.js" />
@@ -31,12 +21,12 @@
             </button>
 
             <div class="panel">
-                @foreach (var food in Model.Categories)
+                @foreach (var category in Model.Categories)
                 {
-                    if (typeGroup.Id == food.ParentId)
+                    if (typeGroup.Id == category.ParentId)
                     {
 
-                        <a href="/Menu/Food/@food.Id" class="anaMenuler">@food.Name</a>
+                        <a asp-page="./Food" asp-route-id="@category.Id" class="anaMenuler">@category.Name</a>
                     }
                 }
             </div>

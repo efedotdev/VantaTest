@@ -75,6 +75,18 @@ namespace VantaTest.Foods
             var queryable = await _repository.WithDetailsAsync(x => x.Category);
             var foodWithCategory = await queryable.FirstOrDefaultAsync(x => x.Id == food.Id);
             return ObjectMapper.Map<Food, FoodDto>(foodWithCategory);
-        }       
+        }
+        public async Task<PagedResultDto<FoodDto>> GetFoodsByCategoryIdAsync(Guid categoryId)
+        {
+            var queryable = await _repository.GetQueryableAsync();
+            queryable = queryable.Include(x => x.Category);
+            var query = queryable.Where(f => f.CategoryId == categoryId);
+            var foods = await AsyncExecuter.ToListAsync(query);
+            var totalCount = await AsyncExecuter.CountAsync(query);
+            return new PagedResultDto<FoodDto>(
+                totalCount,
+                ObjectMapper.Map<List<Food>, List<FoodDto>>(foods)
+            );
+        }
     }
 }

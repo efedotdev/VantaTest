@@ -1,0 +1,56 @@
+﻿@page
+@model VantaTest.Web.Pages.Menu.FoodModel
+@section styles {
+    <abp-style src="/Pages/Menu/Food/Food.css" />
+}
+
+
+<div class="ozel-genis-kutu p-4">
+    <div class="card overflow-hidden px-4" style="min-height: 80vh;">
+
+        <div class="tab-content" id="pills-tabContent">
+
+            <div class="tab-pane fade show active" id="pills-gallery" role="tabpanel" aria-labelledby="pills-gallery-tab" tabindex="0">
+                <div class="d-sm-flex align-items-center justify-content-between mt-3 mb-4">
+                    <form class="position-relative">
+                        <i class="ti ti-search position-absolute top-50 start-0 translate-middle-y text-dark ms-3"></i>
+                    </form>
+                </div>
+                <div class="row g-4">
+                    @foreach (var item in Model.FoodItems)
+                    {
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card hover-img overflow-hidden rounded-2">
+                                <div class="card-body p-0">
+                                    <img src="@item.ImagePath" alt="" class="img-fluid w-100">
+                                    <div class="p-4 d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h6 class="fw-semibold mb-0 fs-4">@item.Name</h6>
+                                            <span class="text-dark fs-2">@item.Description</span>
+                                        </div>
+                                        <div class="dropdown">
+                                            <a class="text-muted fw-semibold d-flex align-items-center p-1" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="ti ti-dots-vertical"></i>
+                                            </a>
+                                            <ul class="dropdown-menu overflow-hidden">
+                                                <li><a class="dropdown-item" href="javascript:void(0)">Isuava wakceajo fe.jpg</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-muted py-5">
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="#">Menüye Dön</a>
+            </p>
+            <p class="mb-1">Gurme Lezzetler Ve Daha Fazlası İçin Bizi Takipte Kalın...</p>
+            <p class="mb-0"><a href="/">Ana Menüye</a> Dönmek İster Misiniz?</p>
+        </div>
+    </footer>

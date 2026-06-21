@@ -15,7 +15,6 @@
     min-height: 100vh;
     width: 100%;
     color: var(--text-main);
-
     width: 100vw !important;
     position: relative;
     left: 50%;
@@ -68,7 +67,7 @@
 }
 
     .accordion:hover, .accordion.active {
-        background: #faf8f5; 
+        background: #faf8f5;
         border-color: var(--accent);
         color: var(--text-main) !important;
         border-radius: 12px;
@@ -179,3 +178,12 @@
         color: #a0a0a0;
         font-size: 11px;
     }
+
+#main-navbar, header, .main-header {
+    display: none !important;
+}
+
+body, .main-content, .lpx-content-container {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
