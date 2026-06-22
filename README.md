@@ -1,8 +1,8 @@
 # VantaTest
 <img width="2560" height="1392" alt="Ekran görüntüsü 2026-06-22 084309" src="https://github.com/user-attachments/assets/cd966c7b-adb8-43ee-a169-4d6699faff00" />
+<img width="2560" height="1392" alt="Ekran görüntüsü 2026-06-22 084332" src="https://github.com/user-attachments/assets/2f7bdc9c-fbed-431e-880e-2fb3f7192cea" />
 <img width="2560" height="1392" alt="Ekran görüntüsü 2026-06-22 084335" src="https://github.com/user-attachments/assets/6b56c565-933b-4c2c-aad1-98fd9bd312d9" />
 <img width="2560" height="1392" alt="Ekran görüntüsü 2026-06-22 084319" src="https://github.com/user-attachments/assets/a08188f3-f54d-4944-b932-e42e4ab00e58" />
-<img width="2560" height="1392" alt="Ekran görüntüsü 2026-06-22 084332" src="https://github.com/user-attachments/assets/2f7bdc9c-fbed-431e-880e-2fb3f7192cea" />
 <img width="2560" height="1392" alt="Ekran görüntüsü 2026-06-22 084325" src="https://github.com/user-attachments/assets/05aa6273-93fc-42d6-9b92-da35eac0af8b" />
 <img width="2560" height="1392" alt="Ekran görüntüsü 2026-06-22 084356" src="https://github.com/user-attachments/assets/eaeef893-cde6-45a2-850e-e4514257ccc1" />
 <img width="2560" height="1392" alt="Ekran görüntüsü 2026-06-22 084408" src="https://github.com/user-attachments/assets/94cd1493-bcd6-4cd5-9148-4133b125860c" />
@@ -16,7 +16,6 @@
 <img width="2560" height="1392" alt="Ekran görüntüsü 2026-06-22 084542" src="https://github.com/user-attachments/assets/8d6bf042-e1bc-4d63-a9f9-4ef1dec590c0" />
 <img width="2560" height="1392" alt="Ekran görüntüsü 2026-06-22 084549" src="https://github.com/user-attachments/assets/0ed31268-9ec2-4413-8329-d8917f9f4ed0" />
 <img width="2560" height="1392" alt="Ekran görüntüsü 2026-06-22 084553" src="https://github.com/user-attachments/assets/f555c0bc-75ef-4de8-bb26-e9a0efea2d10" />
-<img width="2560" height="1392" alt="Ekran görüntüsü 2026-06-22 084559" src="https://github.com/user-attachments/assets/e8265419-3150-4f40-a10d-4ef560d9a6fa" />
 <img width="2560" height="1392" alt="Ekran görüntüsü 2026-06-22 084616" src="https://github.com/user-attachments/assets/cba6f620-6b7d-4b5d-a435-f50d1493654f" />
 
 
