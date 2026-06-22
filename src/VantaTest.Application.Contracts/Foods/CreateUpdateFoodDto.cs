@@ -11,16 +11,16 @@ namespace VantaTest.Foods
         public Guid Id { get; set; }
         [Required]
         [StringLength(128)]
-        public string Name { get; set; } = string.Empty;
+        public string Name { get; set; } 
 
         [Required]
         public Guid CategoryId { get; set; }
 
         [Required]
         [StringLength(256)]
-        public string Description { get; set; } = string.Empty;
+        public string Description { get; set; } 
         [Required]
         public decimal Price { get; set; }
-        public string? ImagePath { get; set; }
+        public string ImagePath { get; set; } = string.Empty;
     }
 }

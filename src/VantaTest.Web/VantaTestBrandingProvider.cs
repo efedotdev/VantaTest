@@ -15,5 +15,7 @@ public class VantaTestBrandingProvider : DefaultBrandingProvider
         _localizer = localizer;
     }
 
-    public override string AppName => _localizer["AppName"];
+    public override string AppName => "Mutfak";
+    public override string LogoUrl => "/images/getting-started/mutfaklogo2.svg";
+
 }

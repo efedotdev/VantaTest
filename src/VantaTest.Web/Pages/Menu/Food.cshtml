@@ -22,20 +22,13 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="card hover-img overflow-hidden rounded-2">
                                 <div class="card-body p-0">
-                                    <img src="@item.ImagePath" alt="" class="img-fluid w-100">
+                                    <img src="@item.ImagePath" alt="" class="img-fluid w-100" style="aspect-ratio: 16/9; object-fit: cover;">
                                     <div class="p-4 d-flex align-items-center justify-content-between">
                                         <div>
                                             <h6 class="fw-semibold mb-0 fs-4">@item.Name</h6>
                                             <span class="text-dark fs-2">@item.Description</span>
                                         </div>
-                                        <div class="dropdown">
-                                            <a class="text-muted fw-semibold d-flex align-items-center p-1" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="ti ti-dots-vertical"></i>
-                                            </a>
-                                            <ul class="dropdown-menu overflow-hidden">
-                                                <li><a class="dropdown-item" href="javascript:void(0)">Isuava wakceajo fe.jpg</a></li>
-                                            </ul>
-                                        </div>
+                                        <div><span class="fw-bold fs-5 text-success">@item.Price ₺</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -48,9 +41,9 @@
     <footer class="text-muted py-5">
         <div class="container">
             <p class="float-end mb-1">
-                <a href="#">Menüye Dön</a>
+                <a asp-page="/Menu/Index">Menüye Dön</a>
             </p>
             <p class="mb-1">Gurme Lezzetler Ve Daha Fazlası İçin Bizi Takipte Kalın...</p>
-            <p class="mb-0"><a href="/">Ana Menüye</a> Dönmek İster Misiniz?</p>
+            <p class="mb-0"><a asp-page="/Index">Ana Menüye</a> Dönmek İster Misiniz?</p>
         </div>
     </footer>

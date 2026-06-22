@@ -19,7 +19,6 @@ namespace VantaTest.Web.Pages.Dashboard.Foods
         public CreateUpdateFoodDto Food { get; set; }
 
         public IReadOnlyList<CategoryDto> Categories { get; set; }
-        [BindProperty]
         public IFormFile? UploadedImage { get; set; }
 
         protected readonly IFoodAppService _foodAppService;
@@ -44,6 +43,7 @@ namespace VantaTest.Web.Pages.Dashboard.Foods
                 Name = foodDto.Name,
                 Description = foodDto.Description,
                 Price = foodDto.Price,
+                ImagePath = foodDto.ImagePath,
                 CategoryId = foodDto.Category != null ? foodDto.Category.Id : Guid.Empty
             };
             var resultCategory = await _categoryAppService.GetListAsync(new PagedAndSortedResultRequestDto());
@@ -62,7 +62,7 @@ namespace VantaTest.Web.Pages.Dashboard.Foods
             }
             if (UploadedImage != null && UploadedImage.Length > 0)
             {
-               var newPath = await _fileManager.UpdateImagePath(UploadedImage,Food.ImagePath);
+                var newPath = await _fileManager.UpdateImagePath(UploadedImage,Food.ImagePath);
                 Food.ImagePath = newPath;
             }
             await _foodAppService.UpdateAsync(id, Food);

@@ -5,10 +5,12 @@
     padding-right: 2rem !important;
     display: flex !important;
 }
+
 .navbar-collapse {
     width: 100% !important;
     display: flex !important;
 }
+
     .navbar-collapse .navbar-nav:first-of-type {
         position: absolute !important;
         left: 50% !important;
@@ -18,16 +20,19 @@
         gap: 40px !important;
         margin: 0 !important;
     }
+
     .navbar-collapse .navbar-nav:last-of-type {
         display: flex !important;
         margin-left: auto !important;
         margin-right: 0 !important;
         gap: 20px !important;
     }
+
 .navbar {
     background-color: #ffffff !important;
     border-bottom: 1px solid #cccccc !important;
 }
+
 .navbar-brand {
     color: #000000 !important;
     font-weight: bold !important;
@@ -41,26 +46,63 @@
     .navbar-nav .nav-link:hover, .navbar-brand:hover {
         color: #000000 !important;
     }
+
 .navbar-toggler-icon {
     filter: invert(1) !important;
 }
+
 .navbar-toggler {
     border-color: rgba(0, 0, 0, 0.1) !important;
 }
+
 .navbar {
     position: relative !important;
     z-index: 9999 !important;
 }
+
     .navbar .dropdown-menu {
         z-index: 10000 !important;
         background-color: #f4f5f7 !important;
         border: 1px solid #e2e2e2 !important;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
     }
+
         .navbar .dropdown-menu .dropdown-item {
             color: #333333 !important;
         }
+
             .navbar .dropdown-menu .dropdown-item:hover {
                 background-color: #e4e6e9 !important;
                 color: #000000 !important;
             }
+
+a.navbar-brand {
+    font-size: 0 !important;
+    color: transparent !important;
+}
+
+h2.brand-text {
+    display: none !important;
+}
+
+img.brand-logo {
+    max-height: 70px !important; 
+    margin: 0 auto !important;
+    display: block !important;
+}
+a.navbar-brand img,
+a.navbar-brand img.brand-logo {
+    display: inline-block !important;
+    max-height: 75px !important;
+    min-width: 120px !important; 
+    width: auto !important;
+    object-fit: contain !important;
+}
+
+div.brand-container img.brand-logo {
+    width: 200px !important; 
+    height: auto !important; 
+    max-height: none !important;
+    margin: 0 auto 20px auto !important;
+    display: block !important;
+}

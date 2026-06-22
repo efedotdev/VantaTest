@@ -13,18 +13,24 @@ public class VantaTestPermissionDefinitionProvider : PermissionDefinitionProvide
 
         //Define your own permissions here. Example:
         //myGroup.AddPermission(VantaTestPermissions.MyPermission1, L("Permission:MyPermission1"));
-        myGroup.AddPermission(VantaTestPermissions.Foods.Default, L("Permission:Foods"));
-        myGroup.AddPermission(VantaTestPermissions.Foods.Create, L("Permission:Foods.Create")); 
-        myGroup.AddPermission(VantaTestPermissions.Foods.Edit, L("Permission:Foods.Edit"));
-        myGroup.AddPermission(VantaTestPermissions.Foods.Delete, L("Permission:Foods.Delete"));
-        myGroup.AddPermission(VantaTestPermissions.Categories.Default, L("Permission:Categories"));
-        myGroup.AddPermission(VantaTestPermissions.Categories.Create, L("Permission:Categories.Create"));
-        myGroup.AddPermission(VantaTestPermissions.Categories.Edit, L("Permission:Categories.Edit"));
-        myGroup.AddPermission(VantaTestPermissions.Categories.Delete, L("Permission:Categories.Delete"));
+        var foodsPermission = myGroup.AddPermission(VantaTestPermissions.Foods.Default, L("Permission:Foods"));
+        foodsPermission.AddChild(VantaTestPermissions.Foods.Create, L("Permission:Foods.Create"));
+        foodsPermission.AddChild(VantaTestPermissions.Foods.Edit, L("Permission:Foods.Edit"));
+        foodsPermission.AddChild(VantaTestPermissions.Foods.Delete, L("Permission:Foods.Delete"));
+        var headersPermission = myGroup.AddPermission(VantaTestPermissions.Customization.Default, L("Permission:Customization"));
+        headersPermission.AddChild(VantaTestPermissions.Customization.Create, L("Permission:Customization.Create"));
+        headersPermission.AddChild(VantaTestPermissions.Customization.Edit, L("Permission:Customization.Edit"));
+        headersPermission.AddChild(VantaTestPermissions.Customization.Delete, L("Permission:Customization.Delete"));
+        var CategoriesPermission = myGroup.AddPermission(VantaTestPermissions.Categories.Default, L("Permission:Categories"));
+        foodsPermission.AddChild(VantaTestPermissions.Categories.Create, L("Permission:Categories.Create"));
+        foodsPermission.AddChild(VantaTestPermissions.Categories.Edit, L("Permission:Categories.Edit"));
+        foodsPermission.AddChild(VantaTestPermissions.Categories.Delete, L("Permission:Categories.Delete"));
     }
+
 
     private static LocalizableString L(string name)
     {
         return LocalizableString.Create<VantaTestResource>(name);
     }
+
 }

@@ -17,13 +17,14 @@ public static class VantaTestPermissions
         public const string Edit = Default + ".Edit";
         public const string Delete = Default + ".Delete";
     }
-    public static class Headers
+    public static class Customization
     {
-        public const string Default = GroupName + ".Headers";
+        public const string Default = GroupName + ".Customization";
         public const string Create = Default + ".Create";
         public const string Edit = Default + ".Edit";
         public const string Delete = Default + ".Delete";
     }
+    
 
     //Add your own permission names. Example:
     //public const string MyPermission1 = GroupName + ".MyPermission1";

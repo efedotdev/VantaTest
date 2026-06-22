@@ -24,12 +24,12 @@ namespace VantaTest.Web.Pages.Dashboard.Customization
         public IReadOnlyList<HeaderDto> Headers { get; set; }
 
         protected readonly IHeaderAppService _headerAppService;
-        protected readonly IFileManager _FileManager;
+        protected readonly IFileManager _fileManager;
 
         public CreateModel(IHeaderAppService headerAppService, IFileManager fileManager)
         {
             _headerAppService = headerAppService;
-            _FileManager = fileManager;
+            _fileManager = fileManager;
         }
 
         public async Task OnGetAsync()
@@ -45,7 +45,7 @@ namespace VantaTest.Web.Pages.Dashboard.Customization
                 await OnGetAsync();
                 return Page();
             }
-            var newPath = await _FileManager.CreateImagePath(UploadedImage, "headers");
+            var newPath = await _fileManager.CreateImagePath(UploadedImage, "headers");
             Header.ImagePath = newPath;
             await _headerAppService.CreateAsync(Header);
             return RedirectToPage("./Index");

@@ -2,6 +2,12 @@
 @model VantaTest.Web.Pages.Dashboard.Foods.EditModel
 @{
 }
+@section styles {
+    <abp-style src="/pages/dashboard/foods/edit/index.css" />
+}
+@section scripts {
+    <abp-script src="/pages/dashboard/foods/edit/index.js"/>
+}
 <div class="container p-4">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -15,17 +21,19 @@
                         <div class="mb-4">
                             <label for="productImageInput" class="form-label fw-bold">Ürün Görseli</label>
 
-                            <div class="image-upload-container" id="uploadContainer" onclick="document.getElementById('productImageInput').click()">
+                            <div class="image-upload-container text-center" id="uploadContainer" onclick="document.getElementById('productImageInput').click()">
+
+                                <img id="imagePreviewBox" class="image-preview mb-2" src="@Model.Food.ImagePath" alt="Mevcut Görsel" style="display: block; margin: 0 auto;">
 
                                 <div id="uploadPlaceholder">
-                                    <i class="bi bi-cloud-arrow-up fs-1 text-muted"></i>
-                                    <p class="text-muted mb-0 mt-2">Fotoğraf yüklemek için tıklayın</p>
+                                    <i class="bi bi-arrow-repeat fs-2 text-muted"></i>
+                                    <p class="text-muted mb-0 mt-2">Mevcut resmi güncellemek veya değiştirmek için tıklayın</p>
                                 </div>
 
-                                <img id="imagePreviewBox" class="image-preview" alt="Önizleme" style="display: none;">
                             </div>
 
                             <input type="file" name="UploadedImage" class="form-control d-none" id="productImageInput" accept="image/*">
+                            <input type="hidden" asp-for="Food.ImagePath" />
                         </div>
                         <div class="mb-3">
                             <label for="categorySelect" class="form-label fw-bold">Kategori</label>
