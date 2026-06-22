@@ -56,7 +56,7 @@ public class VantaTestMenuContributor : IMenuContributor
 
         //Administration->Settings
         administration.SetSubItemOrder(SettingManagementMenuNames.GroupName, 8);
-      
+
 
         context.Menu.AddItem(
             new ApplicationMenuItem(
@@ -95,10 +95,27 @@ public class VantaTestMenuContributor : IMenuContributor
             new ApplicationMenuItem(
                 "dashboard.customization",
                 "Customization",
-                icon: "fas fa-cogs",
-                url: "/Dashboard/Customization"
+                icon: "fas fa-cogs"
                 ).RequirePermissions(VantaTestPermissions.Customization.Default)
 
+            .AddItem(
+            new ApplicationMenuItem(
+                "dashboard.customization.headers",
+                "Headers",
+                icon: "fas fa-cogs",
+                url: "/Dashboard/Customization/Headers"
+                )
+
+            )
+            .AddItem(
+            new ApplicationMenuItem(
+                "dashboard.customization.sliders",
+                "Sliders",
+                icon: "fas fa-cogs",
+                url: "/Dashboard/Customization/Sliders"
+                )
+
+            )
             )
         );
 

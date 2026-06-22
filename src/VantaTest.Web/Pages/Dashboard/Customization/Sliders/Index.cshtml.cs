@@ -8,33 +8,34 @@ using System.IO;
 using System.Threading.Tasks;
 using VantaTest.Headers;
 using VantaTest.Managers;
+using VantaTest.Sliders;
 using Volo.Abp.Application.Dtos;
 
-namespace VantaTest.Web.Pages.Dashboard.Customization
+namespace VantaTest.Web.Pages.Dashboard.Customization.Sliders
 {
     public class IndexModel : PageModel
     {
         [BindProperty]
-        public IReadOnlyList<HeaderDto> Headers { get; set; }
+        public IReadOnlyList<SliderDto> Sliders { get; set; }
 
-        protected readonly IHeaderAppService _headerAppService;
+        protected readonly ISliderAppService _sliderAppService;    
         protected readonly IFileManager _fileManager;
 
-        public IndexModel(IHeaderAppService headerAppService,IFileManager fileManager)
+        public IndexModel(ISliderAppService sliderAppService,IFileManager fileManager)
         {
-            _headerAppService = headerAppService;
+            _sliderAppService = sliderAppService;
             _fileManager = fileManager;
         }
         public async Task OnGetAsync()
         {
-            var resultHeader = await _headerAppService.GetListAsync(new PagedAndSortedResultRequestDto());
-            Headers = resultHeader.Items;
+            var resultSlider = await _sliderAppService.GetListAsync(new PagedAndSortedResultRequestDto());
+            Sliders = resultSlider.Items;
         }
         public async Task<IActionResult> OnPostDeleteAsync(Guid id)
         {
-            var header = await _headerAppService.GetAsync(id);
-            await _fileManager.DeleteImagePath(header.ImagePath);
-            await _headerAppService.DeleteAsync(id);
+            var slider = await _sliderAppService.GetAsync(id);
+            await _fileManager.DeleteImagePath(slider.ImagePath);
+            await _sliderAppService.DeleteAsync(id);
             return RedirectToPage();
         }
 

@@ -19,17 +19,17 @@
 <!-- MAIN -->
 
 <main class="main-content flex-grow-1">
-    <div class="p-0 mb-5" style="width: 100vw; max-width: 4000px; position: relative; left: 50%; transform: translateX(-50%);">
+    <div class="p-0 mb-5" style="margin-top: -40px; width: 100vw; max-width: 4000px; position: relative; left: 50%; transform: translateX(-50%);">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="~/images/getting-started/food-burger2.jpg" alt="Image" style="max-height: 1150px; object-fit: cover;">
+                    <img class="w-100" src="~/images/getting-started/food-burger2.jpg" alt="Image" style="max-height: 1200px; object-fit: cover;">
                     <div class="carousel-caption text-center d-flex flex-column align-items-center">
 
                         <div class="row align-items-center justify-content-center justify-content-lg-start">
                             <div class="col-10 text-center">
                                 <h1 class="slider-title">Burger</h1>
-                                <a href="" class="go-menu animated slideInDown">Menu<i class="fa fa-arrow-right ms-3"></i></a>
+                                <a asp-page="/Menu/Index" class="go-menu animated slideInDown">Menu<i class="fa fa-arrow-right ms-3"></i></a>
                             </div>
                             <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
                                 <img class="img-fluid" src="img/carousel-1.png" alt="">
@@ -38,22 +38,26 @@
 
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="~/images/getting-started/food-pizza2.jpg" alt="Image" style="max-height: 1150px; object-fit: cover;">
-                    <div class="carousel-caption text-center d-flex flex-column align-items-center">
+                @foreach (var item in Model.Sliders)
+                {
+                    <div class="carousel-item">
+                        <img class="w-100" src="@item.ImagePath" alt="Image" style="max-height: 1200px; object-fit: cover;">
+                        <div class="carousel-caption text-center d-flex flex-column align-items-center">
 
-                        <div class="row align-items-center justify-content-center justify-content-lg-start">
-                            <div class="col-10 text-center">
-                                <h1 class="slider-title">Pizza</h1>
-                                <a href="" class="go-menu animated slideInDown">Menu<i class="fa fa-arrow-right ms-3"></i></a>
-                            </div>
-                            <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
-                                <img class="img-fluid" src="img/carousel-2.png" alt="">
-                            </div>
+                            <div class="row align-items-center justify-content-center justify-content-lg-start">
+                                <div class="col-10 text-center">
+                                    <h1 class="slider-title">@item.Title</h1>
+                                    <a href="" class="go-menu animated slideInDown">Menu<i class="fa fa-arrow-right ms-3"></i></a>
+                                </div>
+                                <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
+                                    <img class="img-fluid" src="img/carousel-2.png" alt="">
+                                </div>
 
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                }
                 <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
                         data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

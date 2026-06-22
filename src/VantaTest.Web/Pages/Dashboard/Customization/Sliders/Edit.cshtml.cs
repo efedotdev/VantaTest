@@ -11,43 +11,43 @@ using VantaTest.Categories;
 using VantaTest.Foods;
 using VantaTest.Headers;
 using VantaTest.Managers;
+using VantaTest.Sliders;
 using Volo.Abp.Application.Dtos;
 
-namespace VantaTest.Web.Pages.Dashboard.Customization
+namespace VantaTest.Web.Pages.Dashboard.Customization.Sliders
 {
     public class EditModel : PageModel
     {
         [BindProperty]
-        public CreateUpdateHeaderDto Header { get; set; }
+        public CreateUpdateSliderDto Slider { get; set; }
 
-        public IReadOnlyList<HeaderDto> Headers { get; set; }
+        public IReadOnlyList<SliderDto> Sliders { get; set; }
         public IFormFile? UploadedImage { get; set; }
 
-        protected readonly IHeaderAppService _headerAppService;
+        protected readonly ISliderAppService _sliderAppService;
 
         protected readonly IFileManager _fileManager;
-        public EditModel(IHeaderAppService headerAppService, IFileManager fileManager)
+        public EditModel(ISliderAppService SliderAppService, IFileManager fileManager)
         {
-            _headerAppService = headerAppService;
+            _sliderAppService = SliderAppService;
             _fileManager = fileManager;
 
         }
         public async Task<IActionResult> OnGetAsync(Guid id)
         {
-            var headerDto = await _headerAppService.GetAsync(id);
-            if (headerDto == null)
+            var sliderDto = await _sliderAppService.GetAsync(id);
+            if (sliderDto == null)
             {
                 return RedirectToPage("./Index");
             }
 
-            Header = new CreateUpdateHeaderDto
+            Slider = new CreateUpdateSliderDto
             {
-                MainHeader = headerDto.MainHeader,
-                Description = headerDto.Description,
-                ImagePath = headerDto.ImagePath
+                Title = sliderDto.Title,
+                ImagePath = sliderDto.ImagePath
             };
-            var resultHeaders = await _headerAppService.GetListAsync(new PagedAndSortedResultRequestDto());
-            Headers = resultHeaders.Items;
+            var resultHeaders = await _sliderAppService.GetListAsync(new PagedAndSortedResultRequestDto());
+            Sliders = resultHeaders.Items;
 
             return Page();
         }
@@ -56,16 +56,16 @@ namespace VantaTest.Web.Pages.Dashboard.Customization
         {
             if (!ModelState.IsValid)
             {
-                var resultHeaders = await _headerAppService.GetListAsync(new PagedAndSortedResultRequestDto());
-                Headers = resultHeaders.Items;
+                var resultHeaders = await _sliderAppService.GetListAsync(new PagedAndSortedResultRequestDto());
+                Sliders = resultHeaders.Items;
                 return Page();
             }
             if (UploadedImage != null && UploadedImage.Length > 0)
             {  
-                var newPath = await _fileManager.UpdateImagePath(UploadedImage, Header.ImagePath);
-                Header.ImagePath = newPath;
+                var newPath = await _fileManager.UpdateImagePath(UploadedImage, Slider.ImagePath);
+                Slider.ImagePath = newPath;
             }
-            await _headerAppService.UpdateAsync(id, Header);
+            await _sliderAppService.UpdateAsync(id, Slider);
             return RedirectToPage("./Index");
         }
     }

@@ -1,12 +1,12 @@
 ﻿@page
-@model VantaTest.Web.Pages.Dashboard.Customization.CreateModel
+@model VantaTest.Web.Pages.Dashboard.Customization.Sliders.CreateModel
 @{
 }
 @section styles {
-  <abp-style src="/Pages/Dashboard/Customization/Create/create.css" />
+  <abp-style src="/Pages/Dashboard/Customization/Sliders/Create/create.css" />
 }
 @section scripts {
-   <abp-script src="/Pages/Dashboard/Customization/Create/create.js" />
+   <abp-script src="/Pages/Dashboard/Customization/Sliders/Create/create.js" />
 }
 <div class="container p-4">
     <div class="row justify-content-center">
@@ -19,9 +19,9 @@
                     <form method="post" enctype="multipart/form-data">
 
                         <div class="mb-4">
-                            <label for="headerImageInput" class="form-label fw-bold">Ürün Görseli</label>
+                            <label for="sliderImageInput" class="form-label fw-bold">Ürün Görseli</label>
 
-                            <div class="image-upload-container" id="uploadContainer" onclick="document.getElementById('headerImageInput').click()">
+                            <div class="image-upload-container" id="uploadContainer" onclick="document.getElementById('sliderImageInput').click()">
 
                                 <div id="uploadPlaceholder">
                                     <i class="bi bi-cloud-arrow-up fs-1 text-muted"></i>
@@ -31,17 +31,12 @@
                                 <img id="imagePreviewBox" class="image-preview" alt="Önizleme" style="display: none;">
                             </div>
 
-                            <input type="file" name="UploadedImage" class="form-control d-none" id="headerImageInput" accept="image/*">
+                            <input type="file" name="UploadedImage" class="form-control d-none" id="sliderImageInput" accept="image/*">
                         </div>
                         <div class="mb-3">
-                            <label asp-for="Header.MainHeader" class="form-label fw-bold">Başlık</label>
-                            <input type="text" asp-for="Header.MainHeader" class="form-control" placeholder="Örn: Bunu Biliyor Muydunuz ?" required>
+                            <label asp-for="Slider.Title" class="form-label fw-bold">Başlık</label>
+                            <input type="text" asp-for="Slider.Title" class="form-control" placeholder="Örn: BURGER " required>
                         </div>
-                        <div class="mb-3">
-                            <label asp-for="Header.Description" class="form-label fw-bold">Açıklama</label>
-                            <textarea asp-for="Header.Description" class="form-control" rows="3" placeholder="Bir şeyler yaz..." required></textarea>
-                        </div>
-
                         <div class="d-flex justify-content-between">
                             <a asp-page="./Index" class="btn btn-secondary">İptal</a>
                             <button type="submit" class="btn btn-primary">Kaydet</button>

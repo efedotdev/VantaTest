@@ -1,0 +1,84 @@
+﻿@page
+@model VantaTest.Web.Pages.Dashboard.Customization.Headers.IndexModel
+@{
+}
+@section Styles {
+    <abp-style src="/pages/dashboard/Customization/index.css" />
+}
+@section Scripts {
+    <abp-script src="/pages/dashboard/Customization/index.js" />
+}
+<div class="container p-4">
+    <header class="bg-white p-4 rounded-3 shadow-sm mb-4 d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-start">
+            <i class="bi bi-grid-fill fs-3 text-primary me-2"></i>
+            <div>
+                <h1 class="h3 text-primary m-0">Ana Sayfa Yönetim Paneli</h1>
+                <p class="text-muted mb-0">Ana sayfanızın başlıklarını yönetin.</p>
+            </div>
+        </div>
+        <a asp-page="./Create" class="btn btn-primary">
+            <i class="bi bi-plus-lg me-2"></i>Yeni Başlık Ekle
+        </a>
+    </header>
+
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover table-striped mb-0 align-middle">
+                    <thead class="table-light text-muted small text-uppercase">
+                        <tr>
+                            <th class="ps-4">Görsel</th>
+                            <th>Başlık</th>
+                            <th>Açıklama</th>
+                            <th>Kayıt Tarihi</th>
+                            <th class="text-end pe-4">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Headers)
+                        {
+                            <tr>
+                                <td class="ps-4">
+                                    <div class="d-flex align-items-center">
+                                        <img src="@item.ImagePath" class="rounded-circle me-3" width="50" height="50">
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <h6 class="mb-0 fw-bold">@item.MainHeader</h6>
+                                </td>
+
+                                <td>
+                                    <small class="text-muted d-block fw-light text-truncate"
+                                           style="max-width: 350px; cursor: pointer; word-break: break-all;"
+                                           title="Tamamını okumak için çift tıklayın"
+                                           ondblclick="this.classList.toggle('text-truncate'); this.classList.toggle('text-wrap');">
+                                        @item.Description
+                                    </small>
+                                </td>
+
+                                <td>
+                                    <small class="text-muted">@item.CreationTime.ToString("dd.MM.yyyy")</small>
+                                </td>
+                                <td class="text-end pe-4">
+                                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm me-2" title="Düzenle">
+                                        <i class="bi bi-pencil-square"></i>
+                                        Düzenle
+                                    </a>
+
+                                    <form method="post" asp-page-handler="Delete" asp-route-id="@item.Id" class="d-inline">
+                                        <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('Bu başlığı silmek istediğinize emin misiniz?');">
+                                            <i class="bi bi-trash"></i>
+                                            Sil
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

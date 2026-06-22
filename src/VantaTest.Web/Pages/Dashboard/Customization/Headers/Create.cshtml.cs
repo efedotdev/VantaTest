@@ -12,7 +12,7 @@ using VantaTest.Headers;
 using VantaTest.Managers;
 using Volo.Abp.Application.Dtos;
 
-namespace VantaTest.Web.Pages.Dashboard.Customization
+namespace VantaTest.Web.Pages.Dashboard.Customization.Headers
 {
     public class CreateModel : PageModel
     {
